@@ -15,7 +15,7 @@ export const UserScreen = props => {
             .then(res => {
                 if (!res) return;
 
-                setUserList(res.userList);
+                setUserList(res.dataList);
                 setNumLastCard(res.lastNum);
             })
 
@@ -26,7 +26,7 @@ export const UserScreen = props => {
             .then(res => {
                 if (!res) return;
 
-                setUserList([...userList, ...res.userList]);
+                setUserList([...userList, ...res.dataList]);
                 setNumLastCard(res.lastNum);
             });
     }
