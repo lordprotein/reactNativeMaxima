@@ -1,10 +1,9 @@
-
 export default class Service {
     constructor() {
         this._link = 'https://jsonplaceholder.typicode.com';
     }
 
-    async getResource(url = '') {
+    getResource = async (url = '') => {
         const getData = await fetch(`${this._link}${url}`);
 
         if (!getData.ok) {
@@ -14,35 +13,35 @@ export default class Service {
         return await getData.json();
     }
 
-    getUserList() {
-        return this.getResource(`/users`);
-    }
-
-    getUser(id) {
-        return this.getResource(`/users/${id}`);
-    }
-
-    async getUserListCertainLong(currentNum, count = 4) {
-        let userList = [];
+    getLazyLoadData = async (currentNum, count = 2, argPromice) => {
+        let dataList = [];
 
         let i = 0;
         while (i < count) {
-            const userData = await this.getUser(currentNum++)
+            const newData = await argPromice(currentNum++)
                 .then(res => res, error => false);
 
-            if (!userData) break;
+            if (!newData) break;
 
-            userList = [...userList, userData];
-            
+            dataList = [...dataList, newData];
+
             i++;
         }
 
-        if (!userList.length) return false;
+        if (!dataList.length) return false;
 
 
         return {
             lastNum: currentNum,
-            userList
+            dataList
         };
+    }
+
+    getUser = id => {
+        return this.getResource(`/users/${id}`);
+    }
+
+    getUserListCertainLong = (currentNum, count) => {
+        return this.getLazyLoadData(currentNum, count, this.getUser);
     }
 }
