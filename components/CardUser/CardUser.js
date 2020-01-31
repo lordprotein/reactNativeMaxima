@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, Linking, Button, Image } from 'react-native';
 import { UnfoldingBlock } from '../UnfoldingBlock/UnfoldingBlock';
 
 const CardUser = ({ cardData }) => {
-    const { name, username, email, phone, website, address, company } = cardData;
 
 
     const getAddressPanel = () => {
@@ -50,6 +49,7 @@ const CardUser = ({ cardData }) => {
         )
     }
 
+    const { name, username, email, phone, website, address, company } = cardData;
 
     return (
         <View style={styles.card}>
@@ -58,7 +58,7 @@ const CardUser = ({ cardData }) => {
                     style={styles.icon}
                     source={require('./userIcon.png')}
                 />
-                <View style={styles.wrap_text}>
+                <View>
                     <Text style={styles.text}>
                         Username: {username}
                     </Text>
@@ -71,8 +71,8 @@ const CardUser = ({ cardData }) => {
                     <Text style={styles.text}>
                         Phone: {phone}
                     </Text>
-                    <Text style={styles.text} onPress={() => Linking.openURL(`http://${website}`)}> 
-                        Website: {website} 
+                    <Text style={styles.text} onPress={() => Linking.openURL(`http://${website}`)}>
+                        Website: {website}
                     </Text>
                 </View>
             </View>
@@ -107,14 +107,17 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     wrap_text: {
-        paddingLeft: 25
+        paddingVertical: 25,
+        paddingHorizontal: 25,
+        backgroundColor: '#FFF'
     },
     text: {
         marginBottom: 7
     },
     icon: {
         width: 50,
-        height: 50
+        height: 50,
+        marginRight: 25,
     },
 });
 
