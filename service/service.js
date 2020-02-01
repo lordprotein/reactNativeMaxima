@@ -7,13 +7,13 @@ export default class Service {
         const getData = await fetch(`${this._link}${url}`);
 
         if (!getData.ok) {
-            throw new Error('Error: data is dont get');
+            return  new Error('Error: data is dont get');
         }
 
         return await getData.json();
     }
 
-    getLazyLoadData = async (currentNum, count = 2, argPromice) => {
+    getLazyLoadData = async (currentNum, count = 10, argPromice) => {
         let dataList = [];
 
         let i = 0;
@@ -43,5 +43,17 @@ export default class Service {
 
     getUserListCertainLong = (currentNum, count) => {
         return this.getLazyLoadData(currentNum, count, this.getUser);
+    }
+
+    getAlbum = id => {
+        return this.getResource(`/photos?albumId=${id}`);
+    }
+
+    getPhoto = id => {
+        return this.getResource(`/photos/${id}`);
+    }
+
+    getPhotoListCertainLong = (currentNum, count = 8) => {
+        return this.getLazyLoadData(currentNum, count, this.getPhoto);
     }
 }
