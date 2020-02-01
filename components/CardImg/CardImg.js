@@ -1,27 +1,31 @@
 import React from 'react';
-import { View, Button, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
-export const CardImg = ({ link }) => {
+export const CardImg = ({ title, link }) => {
     return (
         <View style={styles.wrap}>
             <Image
-                style={{
-                    width: '100%', height: 300, resizeMode: 'contain'
-                }}
+                style={styles.image}
                 source={{ uri: link }}
             />
+            <Text style={styles.text}>{title}</Text>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    main: {
-        width: '100%',
-        height: '50%',
-        marginBottom: 500
-    },
     wrap: {
-        marginBottom: 20,
+        marginBottom: 40,
         marginHorizontal: 10
-    }
+    },
+    image: {
+        flex: 1,
+        height: 300,
+        resizeMode: 'contain'
+    },
+    text: {
+        marginTop: 10,
+        textAlign: "center",
+        color: "#626262"
+    },
 });
