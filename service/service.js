@@ -13,7 +13,7 @@ export default class Service {
         return await getData.json();
     }
 
-    getLazyLoadData = async (currentNum, count = 10, argPromice) => {
+    getLazyLoadData = async (currentNum, count = 15, argPromice) => {
         let dataList = [];
 
         let i = 0;
@@ -41,7 +41,7 @@ export default class Service {
         return this.getResource(`/users/${id}`);
     }
 
-    getUserListCertainLong = (currentNum, count) => {
+    getUserListCertainLong = (currentNum, count = 5) => {
         return this.getLazyLoadData(currentNum, count, this.getUser);
     }
 
@@ -53,7 +53,14 @@ export default class Service {
         return this.getResource(`/photos/${id}`);
     }
 
-    getPhotoListCertainLong = (currentNum, count = 8) => {
+    getPhotoListCertainLong = (currentNum, count) => {
         return this.getLazyLoadData(currentNum, count, this.getPhoto);
+    }
+
+    getAlbumTitle = async (id) => {
+        const res = await this.getResource(`/albums/${id}`)
+            .then(res => res.title);
+
+        return await res;
     }
 }
