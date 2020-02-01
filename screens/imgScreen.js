@@ -51,7 +51,7 @@ export const ImgScreen = props => {
          return;
       };
 
-      service.getAlbum(num)
+      service.getPhotoInAlbum(num)
          .then(res => {
             if (!res.length) {
                Alert.alert('Haven\'t this album');

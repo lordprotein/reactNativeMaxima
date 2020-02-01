@@ -45,7 +45,7 @@ export default class Service {
         return this.getLazyLoadData(currentNum, count, this.getUser);
     }
 
-    getAlbum = id => {
+    getPhotoInAlbum = id => {
         return this.getResource(`/photos?albumId=${id}`);
     }
 
