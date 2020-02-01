@@ -7,7 +7,7 @@ export default class Service {
         const getData = await fetch(`${this._link}${url}`);
 
         if (!getData.ok) {
-            return  new Error('Error: data is dont get');
+            throw new Error('Error: data is dont get');
         }
 
         return await getData.json();
