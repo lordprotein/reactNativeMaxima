@@ -7,10 +7,11 @@ import { FindPanel } from '../components/FindPanel/FindPanel';
 
 
 export const ImgScreen = props => {
-   const [imgList, setImgList] = useState();
-   const [numLastImg, setNumLastImg] = useState(1);
-   const [isFilter, setIsFilter] = useState(false);
-   const [titleAlbum, setTitleAlbum] = useState('All');
+   const [imgList, setImgList] = useState(); //For actual list with img
+   const [numLastImg, setNumLastImg] = useState(1); //For lazy load in "All" img
+   const [isFilter, setIsFilter] = useState(false); //For check staus filter ( is try - delete lazyload)
+   const [titleAlbum, setTitleAlbum] = useState('All'); //For title album
+
    const service = new Service();
 
 
@@ -19,23 +20,20 @@ export const ImgScreen = props => {
    }, []);
 
 
-   const setNewListAllPhoto = () => {  //Clean download all photos
+   const setNewListAllPhoto = () => {  //Clean download all img
       service.getPhotoListCertainLong(1)
          .then(res => {
             if (!res) return;
 
-            setImgList(res.dataList);
-
-            setNumLastImg(res.lastNum);
-
-            setTitleAlbum('All');
-
-            setIsFilter(false);
+            setImgList(res.dataList); //Start list img
+            setNumLastImg(res.lastNum); //For lazyload
+            setTitleAlbum('All'); //Default name album with all img
+            setIsFilter(false); //False edit
          })
    }
 
 
-   const loadMorePhoto = () => { //Authomatic download photos when scroll to end (lazyload)
+   const loadMorePhoto = () => { //Authomatic download img when scroll to end (lazyload)
       service.getPhotoListCertainLong(numLastImg)
          .then(res => {
             if (!res) return;
