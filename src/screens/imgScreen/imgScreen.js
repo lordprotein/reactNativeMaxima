@@ -33,7 +33,11 @@ export const ImgScreen = props => {
                     return;
                 }
 
-                setImgList(res.dataList); //Start list img
+                setImgList([res.dataList[1]]) //for scroll up list
+                setTimeout(() => setImgList(res.dataList), 1) //for scroll up list
+
+
+                // setImgList(res.dataList); //Start list img
                 setNumLastImg(res.lastNum); //For lazyload
                 setTitleAlbum('All'); //Default name album with all img
                 setIsFilter(false); //False edit
@@ -79,7 +83,9 @@ export const ImgScreen = props => {
                     return;
                 }
 
-                setImgList(res);
+                setImgList([res[1]])
+                setTimeout(() => setImgList(res), 1) //for scroll up list
+
                 getTitleAlbum(albumId);
                 setIsFilter(true);
                 setIsDownload(false);
@@ -108,13 +114,13 @@ export const ImgScreen = props => {
 
             <Text style={styles.title}>{titleAlbum}</Text>
 
-            {isDownload && <ActivityIndicator size="large" color="#0000ff" />}
+            {isDownload && <ActivityIndicator style={{ justifyContent: "center" }} size="large" color="#0000ff" />}
 
             <FlatList
                 data={imgList}
                 renderItem={item => renderItem(item)}
                 keyExtractor={item => `${item.id}`}
-                onEndReachedThreshold={!isFilter && 0.5}
+                onEndReachedThreshold={!isFilter && 5}
                 onEndReached={!isFilter && loadMorePhoto}
             />
 
