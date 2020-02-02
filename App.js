@@ -14,15 +14,33 @@ const loginSwitch = createSwitchNavigator(
 		Login: LoginScreen
 	},
 	{
-		initialRouteName: 'Login'
+		initialRouteName: 'Login',
+
 	}
 )
 
 const TabNavigator = createBottomTabNavigator(
 	{
 		Users: UserScreen,
-		Login: loginSwitch,
+		Images: loginSwitch,
 	},
+	{
+		tabBarOptions: {
+			activeTintColor: '#2296f3',
+			labelStyle: {
+				fontSize: 20,
+			},
+			style: {
+				// backgroundColor: 'blue',
+				justifyContent: "center",
+				alignItems: "center",
+				paddingBottom: 8
+				// height: 50
+
+
+			},
+		}
+	}
 );
 
 const AppContainer = createAppContainer(TabNavigator);
