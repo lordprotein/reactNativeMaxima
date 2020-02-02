@@ -4,7 +4,6 @@ import CardUser from '../../components/CardUser/CardUser';
 import Service from '../../service/service';
 import { styles } from './styles';
 
-
 export const UserScreen = props => {
     const [userList, setUserList] = useState();
     const [numLastCard, setNumLastCard] = useState(1);
@@ -46,13 +45,13 @@ export const UserScreen = props => {
 
     return (
         <View style={styles.main}>
+            <Text style={styles.title}>Users</Text>
             {isDownload && <ActivityIndicator size="large" color="#0000ff" />}
             <FlatList
                 data={userList}
                 renderItem={(item) => renderItem(item)}
-                onEndReachedThreshold={0.5}
+                onEndReachedThreshold={2}
                 onEndReached={loadMoreUsers}
-                refreshing={true}
                 keyExtractor={item => `${item.id}`}
             />
         </View>
