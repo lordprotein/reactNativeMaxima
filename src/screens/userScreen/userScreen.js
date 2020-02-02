@@ -6,9 +6,9 @@ import { styles } from './styles';
 
 export const UserScreen = props => {
     const [userList, setUserList] = useState(),
-          [numLastCard, setNumLastCard] = useState(1),
-          [isDownload, setIsDownload] = useState(true),
-          service = new Service();
+        [numLastCard, setNumLastCard] = useState(1),
+        [isDownload, setIsDownload] = useState(true),
+        service = new Service();
 
 
     useEffect(() => {
@@ -24,10 +24,12 @@ export const UserScreen = props => {
 
     const loadMoreUsers = () => {
         setIsDownload(true);
+
         service.getUserListCertainLong(numLastCard)
             .then(res => {
                 if (!res) {
                     setIsDownload(false);
+                    setNumLastCard(false);
                     return;
                 }
 
@@ -52,8 +54,8 @@ export const UserScreen = props => {
             <FlatList
                 data={userList}
                 renderItem={(item) => renderItem(item)}
-                onEndReachedThreshold={2}
-                onEndReached={loadMoreUsers}
+                onEndReachedThreshold={3}
+                onEndReached={numLastCard && loadMoreUsers} //numLastCard for close acces to function loadMoreUsers
                 keyExtractor={item => `${item.id}`}
             />
         </View>
