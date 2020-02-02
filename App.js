@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { UserScreen } from './screens/userScreen';
-import { ImgScreen } from './screens/imgScreen';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { Authorization } from './containers/Authorization/Authorization';
+
+import { UserScreen } from './src/screens/userScreen';
+import { ImgScreen } from './src/screens/imgScreen';
+import { Authorization } from './src/containers/Authorization/Authorization';
 
 
 
