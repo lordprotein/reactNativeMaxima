@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, AsyncStorage, View, Text, TextInput, Button, FlatList, Image, Alert, ActivityIndicator } from 'react-native';
-import Service from '../service/service';
-import { CardImg } from '../components/CardImg/CardImg';
-import { FindPanelContainer } from '../containers/FindPanelContainer/FindPanelContainer';
+import { View, Text, FlatList, Alert, ActivityIndicator } from 'react-native';
+import Service from '../../service/service';
+import { CardImg } from '../../components/CardImg/CardImg';
+import { FindPanelContainer } from '../../containers/FindPanelContainer/FindPanelContainer';
+import { styles } from './styles';
 
 
 
@@ -79,7 +80,6 @@ export const ImgScreen = props => {
                 }
 
                 setImgList(res);
-                // setNumLastImg(1);
                 getTitleAlbum(albumId);
                 setIsFilter(true);
                 setIsDownload(false);
@@ -122,18 +122,3 @@ export const ImgScreen = props => {
     );
 }
 
-const styles = StyleSheet.create({
-    main: {
-        flex: 1,
-        backgroundColor: '#E5E5E5',
-        paddingHorizontal: 40,
-        paddingVertical: 20,
-    },
-    title: {
-        marginTop: 30,
-        marginBottom: 50,
-        fontSize: 25,
-        textAlign: "center",
-        color: '#626262'
-    },
-});

@@ -2,9 +2,9 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
-import { UserScreen } from './src/screens/userScreen';
-import { ImgScreen } from './src/screens/imgScreen';
-import { LoginScreen } from './src/screens/loginScreen';
+import { UserScreen } from './src/screens/userScreen/userScreen';
+import { ImgScreen } from './src/screens/imgScreen/imgScreen';
+import { LoginScreen } from './src/screens/loginScreen/loginScreen';
 
 
 

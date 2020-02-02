@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, TextInput, Button, FlatList, ActivityIndicator } from 'react-native';
-import CardUser from '../components/CardUser/CardUser';
-import Service from '../service/service';
-
+import CardUser from '../../components/CardUser/CardUser';
+import Service from '../../service/service';
+import { styles } from './styles';
 
 
 export const UserScreen = props => {
@@ -43,7 +43,7 @@ export const UserScreen = props => {
         return <CardUser cardData={item} />;
     }
 
-    
+
     return (
         <View style={styles.main}>
             {isDownload && <ActivityIndicator size="large" color="#0000ff" />}
@@ -59,11 +59,3 @@ export const UserScreen = props => {
     );
 }
 
-const styles = StyleSheet.create({
-    main: {
-        flex: 1,
-        backgroundColor: '#E5E5E5',
-        paddingHorizontal: 40,
-        paddingVertical: 20,
-    },
-});
