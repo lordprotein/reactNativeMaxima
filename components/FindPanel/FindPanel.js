@@ -13,6 +13,11 @@ export const FindPanel = ({ toFind, getAll }) => {
         updateInputText('');
     }
 
+    const handleFindAll = () => {
+        getAll();
+        updateInputText('');
+    }
+
     return (
         <View style={styles.main}>
             <TextInput
@@ -33,7 +38,7 @@ export const FindPanel = ({ toFind, getAll }) => {
 
             <TouchableHighlight
                 style={styles.button}
-                onPress={() => getAll()}
+                onPress={handleFindAll}
                 underlayColor="#F3A2A2"
             >
                 <Text style={styles.button__text}>All</Text>
