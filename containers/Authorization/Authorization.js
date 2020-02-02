@@ -22,6 +22,7 @@ export const Authorization = props => {
 
         await AsyncStorage.setItem('userTokin', inputText);
         props.navigation.navigate('Images');
+        
     }
 
 

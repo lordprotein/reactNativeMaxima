@@ -30,7 +30,6 @@ const AuthStack = createStackNavigator(
 const TabNavigator = createBottomTabNavigator(
 	{
 		Users: UserScreen,
-		// Images: ImgScreen,
 		Auth: AuthStack,
 	},
 );
