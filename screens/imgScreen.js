@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, AsyncStorage, View, Text, TextInput, Button, FlatList, Image, Alert, ActivityIndicator } from 'react-native';
 import Service from '../service/service';
 import { CardImg } from '../components/CardImg/CardImg';
-import { FindPanel } from '../components/FindPanel/FindPanel';
+import { FindPanelContainer } from '../containers/FindPanelContainer/FindPanelContainer';
 
 
 
@@ -101,9 +101,9 @@ export const ImgScreen = props => {
     return (
         <View style={styles.main}>
 
-            <FindPanel
-                toFind={num => getFilteredData(num)}
-                getAll={setNewListAllPhoto}
+            <FindPanelContainer
+                getFilteredList={num => getFilteredData(num)}
+                getAllList={setNewListAllPhoto}
             />
 
             <Text style={styles.title}>{titleAlbum}</Text>

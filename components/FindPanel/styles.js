@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 10,
         backgroundColor: '#FFF',
         color: '#515151',
+
     },
     button: {
         flex: 1,
