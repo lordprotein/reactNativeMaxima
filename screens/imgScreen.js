@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, TextInput, Button, FlatList, Image, Alert, ActivityIndicator } from 'react-native';
+import { StyleSheet, AsyncStorage,  View, Text, TextInput, Button, FlatList, Image, Alert, ActivityIndicator } from 'react-native';
 import Service from '../service/service';
 import { CardImg } from '../components/CardImg/CardImg';
 import { FindPanel } from '../components/FindPanel/FindPanel';
@@ -17,8 +17,10 @@ export const ImgScreen = props => {
 
 
     useEffect(() => {
-        setNewListAllPhoto()
+        setNewListAllPhoto();
     }, []);
+
+
 
 
     const setNewListAllPhoto = () => {  //Clean download all img
@@ -105,7 +107,7 @@ export const ImgScreen = props => {
             />
 
             <Text style={styles.title}>{titleAlbum}</Text>
- 
+
             {isDownload && <ActivityIndicator size="large" color="#0000ff" />}
 
             <FlatList
