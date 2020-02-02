@@ -3,9 +3,10 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     card: {
         borderWidth: 1,
-        borderColor: '#FFF',
+        borderColor: '#B6B4B4',
         borderRadius: 5,
-        marginVertical: 10
+        marginVertical: 10,
+        overflow: "hidden"
     },
     top: {
         flexDirection: 'row',
@@ -28,5 +29,5 @@ export const styles = StyleSheet.create({
         width: 50,
         height: 50,
         marginRight: 25,
-    },
+    }
 });

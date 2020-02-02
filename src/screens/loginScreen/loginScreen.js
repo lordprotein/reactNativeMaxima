@@ -6,11 +6,12 @@ import {
     Alert
 } from 'react-native';
 import { styles } from './styles';
+import { CustomButton } from '../../components/CustomButton/CustomButton';
 
 
 export const LoginScreen = props => {
     const [login, setLogin] = useState(''),
-          [password, setPassword] = useState('');
+        [password, setPassword] = useState('');
 
 
     const onChangeInput = (text, setNewState) => {
@@ -45,9 +46,9 @@ export const LoginScreen = props => {
                 placeholder="password: admin"
                 value={password}
             />
-            <Button
+            <CustomButton
                 title="Log in"
-                onPress={_signInAsync}
+                action={_signInAsync}
             />
         </View>
     )

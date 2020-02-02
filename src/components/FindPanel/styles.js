@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     main: {
-        width: '100%',
         height: 40,
         flexDirection: 'row',
         borderWidth: 1,
@@ -20,8 +19,6 @@ export const styles = StyleSheet.create({
     },
     button: {
         flex: 1,
-        height: '100%',
-        backgroundColor: 'transparent',
         alignItems: 'center',
         justifyContent: 'center',
         borderLeftWidth: 1,

@@ -3,21 +3,13 @@ import {
     TouchableHighlight,
     Text
 } from 'react-native';
+import { styles } from './styles';
 
 
 export const CustomButton = ({ title, action }) => {
     return (
-
         <TouchableHighlight
-            style={{
-                width: '100%',
-                backgroundColor: '#2296f3',
-                borderWidth: 1,
-                borderColor: '#1071BF',
-                height: 35,
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
+            style={styles.button}
             underlayColor='#1071BF'
             onPress={action}
         >

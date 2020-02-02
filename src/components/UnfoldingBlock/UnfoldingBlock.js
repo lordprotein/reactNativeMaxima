@@ -1,16 +1,14 @@
 import React from 'react';
-import {
-    View,
-    Button
-} from 'react-native';
+import { View } from 'react-native';
+import { CustomButton } from '../CustomButton/CustomButton';
 
 
 export const UnfoldingBlock = ({ title, isDisplay, toggleDisplay, getContent }) => {
     return (
         <View>
-            <Button
+            <CustomButton
                 title={title}
-                onPress={toggleDisplay}
+                action={toggleDisplay}
             />
 
             {isDisplay && getContent()}

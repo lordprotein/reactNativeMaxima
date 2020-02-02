@@ -11,7 +11,7 @@ export const CardImg = ({ title, link }) => {
     return (
         <View style={styles.wrap}>
             <Image
-                style={istyles.mage}
+                style={styles.image}
                 source={{ uri: link }}
             />
             <Text style={styles.text}>{title}</Text>

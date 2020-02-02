@@ -1,11 +1,10 @@
 import React from 'react';
 import {
     View,
-    Text,
     TextInput,
-    TouchableHighlight
 } from 'react-native';
 import { styles } from './styles';
+import { CustomButton } from '../CustomButton/CustomButton';
 
 
 export const FindPanel = ({ findFilter, findAll, changeInput, currText }) => {
@@ -20,21 +19,15 @@ export const FindPanel = ({ findFilter, findAll, changeInput, currText }) => {
                 value={currText}
             />
 
-            <TouchableHighlight
-                style={styles.button}
-                underlayColor="#F3A2A2"
-                onPress={findFilter}
-            >
-                <Text style={styles.button__text}>Find</Text>
-            </TouchableHighlight>
+            <CustomButton
+                title="Find"
+                action={findFilter}
+            />
 
-            <TouchableHighlight
-                style={styles.button}
-                underlayColor="#F3A2A2"
-                onPress={findAll}
-            >
-                <Text style={styles.button__text}>All</Text>
-            </TouchableHighlight>
+            <CustomButton
+                title="All"
+                action={findAll}
+            />
         </View>
     );
 }

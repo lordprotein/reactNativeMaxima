@@ -16,6 +16,6 @@ export const styles = StyleSheet.create({
         color: '#615151',
         borderWidth: 1,
         borderRadius: 5,
-        borderColor: '#515151',
+        borderColor: '#B6B4B4',
     },
 });
