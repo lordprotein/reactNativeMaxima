@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, Linking, Button, Image } from 'react-native';
 import { UnfoldingBlock } from '../UnfoldingBlock/UnfoldingBlock';
+import { UnfoldingBlockContainer } from '../../containers/UnfoldingBlockContainer/UnfoldingBlockContainer';
 
 const CardUser = ({ cardData }) => {
 
@@ -78,11 +79,11 @@ const CardUser = ({ cardData }) => {
             </View>
 
 
-            <UnfoldingBlock
+            <UnfoldingBlockContainer
                 title="Address"
                 getContent={getAddressPanel}
             />
-            <UnfoldingBlock
+            <UnfoldingBlockContainer
                 title="Company"
                 getContent={getCompanyPanel}
             />

@@ -1,26 +1,17 @@
-import React, { useState } from 'react';
-import { View, Button, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, Button } from 'react-native';
 
 
-export const UnfoldingBlock = ({ title, getContent }) => {
-    const [isDisplay, setDisplay] = useState(false);
+export const UnfoldingBlock = ({ title, isDisplay, toggleDisplay, getContent }) => {
 
     return (
         <View>
             <Button
-                style={styles.btn}
                 title={title}
-                onPress={() => setDisplay(!isDisplay)}
+                onPress={toggleDisplay}
             />
+
             {isDisplay && getContent()}
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    btn: {
-        backgroundColor: '#000',
-        color: 'red'
-    }
-});
-
