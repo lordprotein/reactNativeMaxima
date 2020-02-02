@@ -1,38 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import { UserScreen } from './src/screens/userScreen';
 import { ImgScreen } from './src/screens/imgScreen';
-import { Authorization } from './src/containers/Authorization/Authorization';
+import { LoginScreen } from './src/screens/loginScreen';
 
 
 
-const AuthStack = createSwitchNavigator(
+const loginSwitch = createSwitchNavigator(
 	{
 		Images: ImgScreen,
-		Authorization: Authorization
+		Login: LoginScreen
 	},
 	{
-		initialRouteName: 'Authorization'
+		initialRouteName: 'Login'
 	}
 )
 
 const TabNavigator = createBottomTabNavigator(
 	{
 		Users: UserScreen,
-		Auth: AuthStack,
+		Login: loginSwitch,
 	},
 );
 
 const AppContainer = createAppContainer(TabNavigator);
 
 const App = () => {
-	return (
-		<AppContainer />
-	)
+	return <AppContainer />;
 }
-
 
 
 export default App;

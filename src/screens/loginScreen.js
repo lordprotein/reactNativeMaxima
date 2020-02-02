@@ -9,7 +9,7 @@ import {
     Alert
 } from 'react-native';
 
-export const Authorization = props => {
+export const LoginScreen = props => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
