@@ -39,8 +39,8 @@ export const ImgScreen = props => {
 
                 // setImgList(res.dataList); //Start list img
                 setNumLastImg(res.lastNum); //For lazyload
-                setTitleAlbum('All'); //Default name album with all img
-                setIsFilter(false); //False edit
+                if (titleAlbum !== 'All') setTitleAlbum('All'); //Default name album with all img
+                if (isFilter) setIsFilter(false); //False edit
                 setIsDownload(false);
             })
     }
