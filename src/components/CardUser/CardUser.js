@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, Linking, Button, Image } from 'react-native';
-import { UnfoldingBlock } from '../UnfoldingBlock/UnfoldingBlock';
+import React from 'react';
+import { View, Text, Linking, Image } from 'react-native';
+import { styles } from './styles';
 import { UnfoldingBlockContainer } from '../../containers/UnfoldingBlockContainer/UnfoldingBlockContainer';
 
 const CardUser = ({ cardData }) => {
-
-
     const getAddressPanel = () => {
         const { street, suite, city, zipcode, geo } = address;
         return (
@@ -93,33 +91,6 @@ const CardUser = ({ cardData }) => {
 
 
 
-const styles = StyleSheet.create({
-    card: {
-        borderWidth: 1,
-        borderColor: '#FFF',
-        borderRadius: 5,
-        marginVertical: 10
-    },
-    top: {
-        flexDirection: 'row',
-        // alignItems: 'center',
-        backgroundColor: '#FFF',
-        paddingVertical: 25,
-        paddingHorizontal: 20,
-    },
-    wrap_text: {
-        paddingVertical: 25,
-        paddingHorizontal: 25,
-        backgroundColor: '#FFF'
-    },
-    text: {
-        marginBottom: 7
-    },
-    icon: {
-        width: 50,
-        height: 50,
-        marginRight: 25,
-    },
-});
+
 
 export default CardUser;
