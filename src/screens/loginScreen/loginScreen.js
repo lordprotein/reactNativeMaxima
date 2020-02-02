@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-    AsyncStorage,
     View,
     Button,
     TextInput,
@@ -10,8 +9,8 @@ import { styles } from './styles';
 
 
 export const LoginScreen = props => {
-    const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
+    const [login, setLogin] = useState(''),
+          [password, setPassword] = useState('');
 
 
     const onChangeInput = (text, setNewState) => {
@@ -28,7 +27,6 @@ export const LoginScreen = props => {
         };
 
         props.navigation.navigate('Images');
-
     }
 
 
@@ -54,5 +52,3 @@ export const LoginScreen = props => {
         </View>
     )
 }
-
-

@@ -31,13 +31,9 @@ const TabNavigator = createBottomTabNavigator(
 				fontSize: 20,
 			},
 			style: {
-				// backgroundColor: 'blue',
 				justifyContent: "center",
 				alignItems: "center",
 				paddingBottom: 8
-				// height: 50
-
-
 			},
 		}
 	}

@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     },
     top: {
         flexDirection: 'row',
-        // alignItems: 'center',
         backgroundColor: '#FFF',
         paddingVertical: 25,
         paddingHorizontal: 20,
@@ -21,6 +20,9 @@ export const styles = StyleSheet.create({
     },
     text: {
         marginBottom: 7
+    },
+    link: {
+        textDecorationLine: 'underline'
     },
     icon: {
         width: 50,

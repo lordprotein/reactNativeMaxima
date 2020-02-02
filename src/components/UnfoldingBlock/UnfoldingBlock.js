@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import {
+    View,
+    Button
+} from 'react-native';
 
 
 export const UnfoldingBlock = ({ title, isDisplay, toggleDisplay, getContent }) => {
-
     return (
         <View>
             <Button

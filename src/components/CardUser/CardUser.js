@@ -1,5 +1,10 @@
 import React from 'react';
-import { View, Text, Linking, Image } from 'react-native';
+import {
+    View,
+    Text,
+    Linking,
+    Image
+} from 'react-native';
 import { styles } from './styles';
 import { UnfoldingBlockContainer } from '../../containers/UnfoldingBlockContainer/UnfoldingBlockContainer';
 
@@ -30,6 +35,7 @@ const CardUser = ({ cardData }) => {
         )
     }
 
+
     const getCompanyPanel = () => {
         const { name, catchPhrase, bs } = company;
 
@@ -48,7 +54,9 @@ const CardUser = ({ cardData }) => {
         )
     }
 
+
     const { name, username, email, phone, website, address, company } = cardData;
+
 
     return (
         <View style={styles.card}>
@@ -67,11 +75,14 @@ const CardUser = ({ cardData }) => {
                     <Text style={styles.text}>
                         E-mail: {email}
                     </Text>
-                    <Text style={styles.text}>
+                    <Text
+                        style={styles.text}
+                        onPress={() => Linking.openURL(`tel:${phone}`)}
+                    >
                         Phone: {phone}
                     </Text>
                     <Text style={styles.text} onPress={() => Linking.openURL(`http://${website}`)}>
-                        Website: {website}
+                        Website: <Text style={styles.link}>{website}</Text>
                     </Text>
                 </View>
             </View>
@@ -88,9 +99,5 @@ const CardUser = ({ cardData }) => {
         </View>
     );
 }
-
-
-
-
 
 export default CardUser;

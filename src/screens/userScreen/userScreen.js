@@ -5,10 +5,10 @@ import Service from '../../service/service';
 import { styles } from './styles';
 
 export const UserScreen = props => {
-    const [userList, setUserList] = useState();
-    const [numLastCard, setNumLastCard] = useState(1);
-    const [isDownload, setIsDownload] = useState(true);
-    const service = new Service();
+    const [userList, setUserList] = useState(),
+          [numLastCard, setNumLastCard] = useState(1),
+          [isDownload, setIsDownload] = useState(true),
+          service = new Service();
 
 
     useEffect(() => {
@@ -19,7 +19,6 @@ export const UserScreen = props => {
                 setNumLastCard(res.lastNum);
                 setIsDownload(false);
             })
-
     }, []);
 
 
@@ -38,6 +37,7 @@ export const UserScreen = props => {
             });
     }
 
+
     const renderItem = ({ item }) => {
         return <CardUser cardData={item} />;
     }
@@ -46,7 +46,9 @@ export const UserScreen = props => {
     return (
         <View style={styles.main}>
             <Text style={styles.title}>Users</Text>
+
             {isDownload && <ActivityIndicator size="large" color="#0000ff" />}
+
             <FlatList
                 data={userList}
                 renderItem={(item) => renderItem(item)}

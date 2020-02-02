@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, Alert, ActivityIndicator } from 'react-native';
+import {
+    View,
+    Text,
+    FlatList,
+    Alert,
+    ActivityIndicator
+} from 'react-native';
 import Service from '../../service/service';
 import { CardImg } from '../../components/CardImg/CardImg';
 import { FindPanelContainer } from '../../containers/FindPanelContainer/FindPanelContainer';
@@ -22,8 +28,6 @@ export const ImgScreen = props => {
     }, []);
 
 
-
-
     const setNewListAllPhoto = () => {  //Clean download all img
         setIsDownload(true);
         service.getPhotoListCertainLong(1)
@@ -37,7 +41,6 @@ export const ImgScreen = props => {
                 setTimeout(() => setImgList(res.dataList), 1) //for scroll up list
 
 
-                // setImgList(res.dataList); //Start list img
                 setNumLastImg(res.lastNum); //For lazyload
                 if (titleAlbum !== 'All') setTitleAlbum('All'); //Default name album with all img
                 if (isFilter) setIsFilter(false); //False edit

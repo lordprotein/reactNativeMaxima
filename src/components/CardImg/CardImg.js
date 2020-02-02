@@ -1,18 +1,20 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import {
+    View,
+    Text,
+    Image
+} from 'react-native';
 import { styles } from './styles';
-
-const { wrap, image, text } = styles;
 
 
 export const CardImg = ({ title, link }) => {
     return (
-        <View style={wrap}>
+        <View style={styles.wrap}>
             <Image
-                style={image}
+                style={istyles.mage}
                 source={{ uri: link }}
             />
-            <Text style={text}>{title}</Text>
+            <Text style={styles.text}>{title}</Text>
         </View>
     );
 }
