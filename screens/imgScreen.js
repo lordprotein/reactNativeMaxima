@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, AsyncStorage,  View, Text, TextInput, Button, FlatList, Image, Alert, ActivityIndicator } from 'react-native';
+import { StyleSheet, AsyncStorage, View, Text, TextInput, Button, FlatList, Image, Alert, ActivityIndicator } from 'react-native';
 import Service from '../service/service';
 import { CardImg } from '../components/CardImg/CardImg';
 import { FindPanel } from '../components/FindPanel/FindPanel';
@@ -99,7 +99,7 @@ export const ImgScreen = props => {
 
 
     return (
-        <View>
+        <View style={styles.main}>
 
             <FindPanel
                 toFind={num => getFilteredData(num)}
@@ -123,6 +123,12 @@ export const ImgScreen = props => {
 }
 
 const styles = StyleSheet.create({
+    main: {
+        flex: 1,
+        backgroundColor: '#E5E5E5',
+        paddingHorizontal: 40,
+        paddingVertical: 20,
+    },
     title: {
         marginTop: 30,
         marginBottom: 50,
