@@ -37,14 +37,14 @@ export const LoginScreen = props => {
             <TextInput
                 style={styles.input}
                 onChangeText={text => onChangeInput(text, setLogin)}
-                placeholder="login"
+                placeholder="login: admin"
                 value={login}
             />
             <TextInput
                 style={styles.input}
                 onChangeText={text => onChangeInput(text, setPassword)}
                 secureTextEntry={true}
-                placeholder="password"
+                placeholder="password: admin"
                 value={password}
             />
             <Button
