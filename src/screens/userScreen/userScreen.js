@@ -47,7 +47,7 @@ export const UserScreen = props => {
         <View style={styles.main}>
             <Text style={styles.title}>Users</Text>
 
-            {isDownload && <ActivityIndicator size="large" color="#0000ff" />}
+            {isDownload && <ActivityIndicator size='large' color='#0000ff' />}
 
             <FlatList
                 data={userList}

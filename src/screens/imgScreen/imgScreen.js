@@ -15,7 +15,7 @@ import { styles } from './styles';
 
 export const ImgScreen = props => {
     const [imgList, setImgList] = useState(); //For actual list with img
-    const [numLastImg, setNumLastImg] = useState(1); //For lazy load in "All" img
+    const [numLastImg, setNumLastImg] = useState(1); //For lazy load in 'All' img
     const [isFilter, setIsFilter] = useState(false); //For check staus filter ( is try - delete lazyload)
     const [titleAlbum, setTitleAlbum] = useState('All'); //For title album
     const [isDownload, setIsDownload] = useState(true);
@@ -117,7 +117,7 @@ export const ImgScreen = props => {
 
             <Text style={styles.title}>{titleAlbum}</Text>
 
-            {isDownload && <ActivityIndicator style={{ justifyContent: "center" }} size="large" color="#0000ff" />}
+            {isDownload && <ActivityIndicator style={{ justifyContent: 'center' }} size='large' color='#0000ff' />}
 
             <FlatList
                 data={imgList}

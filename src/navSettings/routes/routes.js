@@ -31,8 +31,8 @@ export const routes = createBottomTabNavigator(
                 fontSize: 20,
             },
             style: {
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: 'center',
+                alignItems: 'center',
                 paddingBottom: 8
             },
         }

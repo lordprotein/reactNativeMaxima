@@ -36,18 +36,18 @@ export const LoginScreen = props => {
             <TextInput
                 style={styles.input}
                 onChangeText={text => onChangeInput(text, setLogin)}
-                placeholder="login: admin"
+                placeholder='login: admin'
                 value={login}
             />
             <TextInput
                 style={styles.input}
                 onChangeText={text => onChangeInput(text, setPassword)}
                 secureTextEntry={true}
-                placeholder="password: admin"
+                placeholder='password: admin'
                 value={password}
             />
             <CustomButton
-                title="Log in"
+                title='Log in'
                 action={_signInAsync}
             />
         </View>

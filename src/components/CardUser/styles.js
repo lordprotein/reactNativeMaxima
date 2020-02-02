@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         borderColor: '#B6B4B4',
         borderRadius: 5,
         marginVertical: 10,
-        overflow: "hidden"
+        overflow: 'hidden'
     },
     top: {
         flexDirection: 'row',

@@ -13,19 +13,19 @@ export const FindPanel = ({ findFilter, findAll, changeInput, currText }) => {
         <View style={styles.main}>
             <TextInput
                 style={styles.input}
-                placeholder="Enter a number album"
+                placeholder='Enter a number album'
                 onChangeText={changeInput}
-                keyboardType="numeric"
+                keyboardType='numeric'
                 value={currText}
             />
 
             <CustomButton
-                title="Find"
+                title='Find'
                 action={findFilter}
             />
 
             <CustomButton
-                title="All"
+                title='All'
                 action={findAll}
             />
         </View>

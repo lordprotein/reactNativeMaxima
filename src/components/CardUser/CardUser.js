@@ -89,11 +89,11 @@ const CardUser = ({ cardData }) => {
 
 
             <UnfoldingBlockContainer
-                title="Address"
+                title='Address'
                 getContent={getAddressPanel}
             />
             <UnfoldingBlockContainer
-                title="Company"
+                title='Company'
                 getContent={getCompanyPanel}
             />
         </View>
