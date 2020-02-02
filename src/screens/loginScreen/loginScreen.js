@@ -27,7 +27,6 @@ export const LoginScreen = props => {
             return;
         };
 
-        await AsyncStorage.setItem('authorization', 'true');
         props.navigation.navigate('Images');
 
     }
